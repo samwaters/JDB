@@ -13,7 +13,7 @@ import java.sql.Statement;
  * @version 1.0.0
  * @date 25/04/2016
  */
-public class Mysql
+public class Mysql implements IDriver
 {
   private String _host;
   private String _username;
