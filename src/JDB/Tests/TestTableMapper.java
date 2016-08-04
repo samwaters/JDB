@@ -1,5 +1,6 @@
 package JDB.Tests;
 
+import JDB.Enums.IdType;
 import JDB.Mapper;
 /**
  * @author sam@samwaters.com
@@ -8,7 +9,7 @@ import JDB.Mapper;
  */
 public class TestTableMapper extends Mapper
 {
-  public String id;
+  public int id;
   public String name;
   public String email;
   public Integer score;
@@ -17,6 +18,11 @@ public class TestTableMapper extends Mapper
   public String getDatabaseName()
   {
     return "test";
+  }
+
+  public IdType getIdType()
+  {
+    return IdType.AUTO;
   }
 
   protected String getTableName()
