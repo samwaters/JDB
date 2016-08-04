@@ -20,13 +20,20 @@ public class Mysql implements IDriver
   private String _password;
   private Connection _connection;
 
-  public Mysql(String host, String username, String password) throws ClassNotFoundException
+  public Mysql(String host, String username, String password)
   {
-    Class.forName("com.mysql.jdbc.Driver");
-    this._host = "jdbc:mysql://" + host;
-    this._username = username;
-    this._password = password;
-    this._refreshConnection();
+    try
+    {
+      Class.forName("com.mysql.jdbc.Driver");
+      this._host = "jdbc:mysql://" + host;
+      this._username = username;
+      this._password = password;
+      this._refreshConnection();
+    }
+    catch(Exception e)
+    {
+      Utils.logMessage("MySQL Driver Error: " + e.getMessage());
+    }
   }
 
   private boolean _refreshConnection()
