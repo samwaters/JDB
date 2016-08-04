@@ -58,6 +58,11 @@ public class Mysql implements IDriver
     }
   }
 
+  /**
+   * Run in Insert query on the database
+   * @param query The insert query
+   * @return The insert id
+   */
   public int insert(Query query)
   {
     try
@@ -75,6 +80,9 @@ public class Mysql implements IDriver
     }
   }
 
+  /**
+   * @return Whether this driver is currently connected
+   */
   public boolean isConnected()
   {
     try
@@ -88,6 +96,11 @@ public class Mysql implements IDriver
     }
   }
 
+  /**
+   * Run a Select query on the database
+   * @param query The select query to run
+   * @return A ResultSet object of results
+   */
   public ResultSet query(Query query)
   {
     try
@@ -103,6 +116,11 @@ public class Mysql implements IDriver
     }
   }
 
+  /**
+   * Run an Update query on the database
+   * @param query The update query to run
+   * @return The number of rows affected
+   */
   public int update(Query query)
   {
     try
